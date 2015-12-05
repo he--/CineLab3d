@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="background" focusTraversable="true" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" pickOnBounds="false" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../styles/cinemaLight.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <Pane layoutX="125.0" layoutY="117.0" opacity="0.81" prefHeight="162.0" prefWidth="353.0" styleClass="fundoAreaLogin">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <PasswordField layoutX="109.0" layoutY="69.0" />
+            <Button layoutX="109.0" layoutY="107.0" mnemonicParsing="false" onAction="#logar" text="Logar">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="223.0" layoutY="107.0" mnemonicParsing="false" onAction="#sair" text="Sair">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <TextField layoutX="109.0" layoutY="33.0" />
+            <Label layoutX="28.0" layoutY="34.0" text="Login:">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="70.0" text="Senha:">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
