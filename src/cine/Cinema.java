@@ -28,6 +28,68 @@ public class Cinema
 		this.inInt    = new Scanner(System.in);
 		this.inString = new Scanner(System.in);
 	}
+	
+	
+
+	public String[] getLetra() {
+		return letra;
+	}
+
+
+
+	public void setLetra(String[] letra) {
+		this.letra = letra;
+	}
+
+
+
+	public int[] getFileira() {
+		return fileira;
+	}
+
+
+
+	public void setFileira(int[] fileira) {
+		this.fileira = fileira;
+	}
+
+
+
+	public Sala getSala() {
+		return sala;
+	}
+
+
+
+	public void setSala(Sala sala) {
+		this.sala = sala;
+	}
+
+
+
+	public Scanner getInInt() {
+		return inInt;
+	}
+
+
+
+	public void setInInt(Scanner inInt) {
+		this.inInt = inInt;
+	}
+
+
+
+	public Scanner getInString() {
+		return inString;
+	}
+
+
+
+	public void setInString(Scanner inString) {
+		this.inString = inString;
+	}
+
+
 
 	public void abreSala()
 	{

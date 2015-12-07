@@ -34,9 +34,10 @@ public class Main extends Application {
 
         try {
 
-            Parent root = FXMLLoader.load(Main.class.getResource("/view/Login.fxml"));
            
-            Scene scene = new Scene(root);
+            SalaController sala = new SalaController();
+            sala.carregar();
+            Scene scene = new Scene(sala);
             
             stage.getIcons().add(new Image("/imagens/icon.png"));
             stage.setScene(scene);
