@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="55.0" prefWidth="306.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <children>
+      <MenuBar fx:id="menu" centerShape="false" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="30.0" scaleShape="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Cinema">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Gerenciar FIlmes" />
+                  <MenuItem fx:id="btn_filmesEmCartaz" mnemonicParsing="false" onAction="#filmesEmCartaz" text="Filmes Em Cartaz" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Sala">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Gerenciar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Usuarios">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Gerenciar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Informaçoes">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane fx:id="conteudo" layoutX="-1.0" layoutY="29.0" prefHeight="112.0" prefWidth="306.0" />
+   </children>
+</AnchorPane>
