@@ -35,13 +35,13 @@ public class Main extends Application {
         try {
 
            
-            SalaController sala = new SalaController();
+            SalaPane sala = new SalaPane();
             sala.carregar();
             Scene scene = new Scene(sala);
             
             stage.getIcons().add(new Image("/imagens/icon.png"));
             stage.setScene(scene);
-            stage.setResizable(false);
+            stage.setResizable(true);
             stage.setTitle("Login / Cinema e Ingressos");
             stage.show();
             
