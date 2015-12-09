@@ -39,5 +39,15 @@ public class Sala {
 	{
 		return this.cadeiras;
 	}
+	
+	public boolean setCliente(Legenda legenda, Cliente cliente)
+	{
+		Cadeira cadeira = this.getCadeira(legenda);
+		if (cadeira.isOcupada()) {
+			return false;
+		}
+		cadeira.setCliente(cliente);
+		return true;
+	}
 
 }
