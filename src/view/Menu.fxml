@@ -8,31 +8,34 @@
 
 <AnchorPane id="AnchorPane" prefHeight="55.0" prefWidth="306.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
    <children>
-      <MenuBar fx:id="menu" centerShape="false" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="30.0" scaleShape="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-        <menus>
-            <Menu mnemonicParsing="false" text="Cinema">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Gerenciar FIlmes" />
-                  <MenuItem fx:id="btn_filmesEmCartaz" mnemonicParsing="false" onAction="#filmesEmCartaz" text="Filmes Em Cartaz" />
-               </items>
-            </Menu>
-          <Menu mnemonicParsing="false" text="Sala">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Gerenciar" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Usuarios">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Gerenciar" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Informaçoes">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <Pane fx:id="conteudo" layoutX="-1.0" layoutY="29.0" prefHeight="112.0" prefWidth="306.0" />
+      <BorderPane fx:id="painelMenu" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <top>
+            <MenuBar fx:id="menu" centerShape="false" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="30.0" scaleShape="false" BorderPane.alignment="CENTER">
+              <menus>
+                  <Menu mnemonicParsing="false" text="Aplicaçao">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Gerenciar FIlmes" />
+                        <MenuItem fx:id="btn_filmesEmCartaz" mnemonicParsing="false" onAction="#filmesEmCartaz" text="Filmes Em Cartaz" />
+                        <MenuItem mnemonicParsing="false" onAction="#sair" text="Sair" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Sala">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Gerenciar" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Usuarios">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Gerenciar" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Configuraçoes">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#informacoes" text="Informaçoes" />
+                     </items></Menu>
+              </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
    </children>
 </AnchorPane>
