@@ -45,9 +45,11 @@ public class SalaPane extends FlowPane
     	
         Cinema cinema = new Cinema(); 
         cinema.abreSala();
+        
         int fileira[] = cinema.getFileira();
         String letra[] = cinema.getLetra();
-        GridPane gridpane = new GridPane();
+        
+//        GridPane gridpane = new GridPane();
         BackgroundSize backgroundSize = new BackgroundSize(20, 20, true, true, true, false);
      // new BackgroundImage(image, repeatX, repeatY, position, size)
         Background background = null;

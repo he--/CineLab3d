@@ -9,9 +9,12 @@ public class Sala {
 	
 	private  Map<Legenda, Cadeira> cadeiras;
 	
+	private Sessao sessao;
+	
 	public Sala()
 	{
 		this.cadeiras = new HashMap<Legenda, Cadeira>(); 
+		this.sessao = new Sessao();
 	}
 	
 	public void locaCadeira(Legenda legenda, Cadeira cadeira)

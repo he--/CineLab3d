@@ -21,7 +21,7 @@
                   </Menu>
                 <Menu mnemonicParsing="false" text="Sala">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Gerenciar" />
+                    <MenuItem mnemonicParsing="false" onAction="#gerenciarSala" text="Gerenciar" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Usuarios">

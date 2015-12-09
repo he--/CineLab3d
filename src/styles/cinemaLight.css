@@ -11,3 +11,12 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: 600 400;
 }
+
+
+.gerenciarSala {
+    -fx-background-image: url("../imagens/maquina.jpg");
+    -fx-background-insets: 20, 10;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 600 400;
+    -fx-opacity: 50;
+}

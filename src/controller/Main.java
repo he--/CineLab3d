@@ -34,16 +34,6 @@ public class Main extends Application {
 
         try {
 
-           
-            SalaPane sala = new SalaPane();
-            sala.carregar();
-            Scene scene = new Scene(sala);
-            
-            stage.getIcons().add(new Image("/imagens/icon.png"));
-            stage.setScene(scene);
-            stage.setResizable(true);
-            stage.setTitle("Login / Cinema e Ingressos");
-            stage.show();
             
         } catch (Exception e) {
             e.printStackTrace();

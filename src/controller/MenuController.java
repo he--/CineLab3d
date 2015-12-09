@@ -70,6 +70,20 @@ public class MenuController implements Initializable {
             mensagemErro();
         }
     }
+    
+    public void gerenciarSala(ActionEvent event) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/SalaCinema.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("CineLab3d");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException ex) {
+            mensagemErro();
+        }
+    }
 
     public void sair(ActionEvent event) {
         Platform.exit();
