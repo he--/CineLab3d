@@ -63,9 +63,9 @@ public class SalaPane extends FlowPane
 				);
         for (int j = 0; j < fileira.length; j++) {
 			for (int i = 0; i < letra.length; i++) {
+				
 				if ((i % 2) == 0 ) {
 					background = new Background(cadeiraLivre);
-					
 				} else {
 					background = new Background(cadeiraOcupada);
 				}
