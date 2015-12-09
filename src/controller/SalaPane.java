@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
 
+import cine.Cadeira;
 import cine.Cinema;
 import cine.Legenda;
 import javafx.application.Application;
@@ -43,6 +44,7 @@ public class SalaPane extends FlowPane
     public void carregar() {
     	
         Cinema cinema = new Cinema(); 
+        cinema.abreSala();
         int fileira[] = cinema.getFileira();
         String letra[] = cinema.getLetra();
         GridPane gridpane = new GridPane();
@@ -64,15 +66,20 @@ public class SalaPane extends FlowPane
         for (int j = 0; j < fileira.length; j++) {
 			for (int i = 0; i < letra.length; i++) {
 				
-				if ((i % 2) == 0 ) {
-					background = new Background(cadeiraLivre);
-				} else {
-					background = new Background(cadeiraOcupada);
-				}
+				//@todo fazer construtor com dois parametros
+				Legenda legenda = new Legenda();
+				legenda.setLetra(letra[i]);
+				legenda.setNumero(j);
+				Cadeira cadeira = cinema.getSala().getCadeira(legenda);
 				
-				Button cadeira = new Button();
-				cadeira.setBackground(background);
-				this.getChildren().add(cadeira);
+				if (cadeira.isOcupada()) {
+					background = new Background(cadeiraOcupada);
+				} else {
+					background = new Background(cadeiraLivre);
+				}
+				Button cadeiraBt = new Button();
+				cadeiraBt.setBackground(background);
+				this.getChildren().add(cadeiraBt);
 			}
 		}
        

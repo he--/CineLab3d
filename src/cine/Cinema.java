@@ -120,22 +120,22 @@ public class Cinema
 		}
 	}
 
-	public void flashSala()
-	{
-		System.out.println("-----A-------B-------C-------D-------E-------F----");
-		for (int j = 0; j < this.fileira.length; j++) {
-			System.out.print(j + " ");
-			for (int i = 0; i < this.letra.length; i++) {
-				//@todo fazer construtor com dois parametros
-				Legenda legenda = new Legenda();
-				legenda.setLetra(this.letra[i]);
-				legenda.setNumero(j);
-				System.out.print(this.sala.getCadeira(legenda).toString() +" ");
-			}
-			System.out.println();
-		}
-		this.inString.nextLine();
-	}
+//	public void flashSala()
+//	{
+//		System.out.println("-----A-------B-------C-------D-------E-------F----");
+//		for (int j = 0; j < this.fileira.length; j++) {
+//			System.out.print(j + " ");
+//			for (int i = 0; i < this.letra.length; i++) {
+//				//@todo fazer construtor com dois parametros
+//				Legenda legenda = new Legenda();
+//				legenda.setLetra(this.letra[i]);
+//				legenda.setNumero(j);
+//				System.out.print(this.sala.getCadeira(legenda).toString() +" ");
+//			}
+//			System.out.println();
+//		}
+//		this.inString.nextLine();
+//	}
 	
 	public void vendeIngresso()
 	{

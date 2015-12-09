@@ -28,9 +28,6 @@ public class CinemaSessao {
 					+ "####################################################################################");
 			int itemMenu = inInt.nextInt();
 			switch (itemMenu) {
-			case 1:
-				cinema.flashSala();;
-                break;
 			case 2:
 				cinema.vendeIngresso();
                 break;
