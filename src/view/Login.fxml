@@ -16,8 +16,8 @@
             <Insets />
          </opaqueInsets>
          <children>
-            <PasswordField layoutX="109.0" layoutY="69.0" />
-            <Button layoutX="109.0" layoutY="107.0" mnemonicParsing="false" onAction="#logar" text="Logar">
+            <PasswordField fx:id="senha" layoutX="109.0" layoutY="69.0" promptText="senha" />
+            <Button fx:id="btn_login" layoutX="109.0" layoutY="107.0" mnemonicParsing="false" onAction="#logar" text="Logar">
                <font>
                   <Font size="17.0" />
                </font>
@@ -27,7 +27,7 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <TextField layoutX="109.0" layoutY="33.0" />
+            <TextField fx:id="login" layoutX="109.0" layoutY="33.0" promptText="login" />
             <Label layoutX="28.0" layoutY="34.0" text="Login:">
                <font>
                   <Font name="System Bold" size="17.0" />

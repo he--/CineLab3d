@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="informacoes" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.InformacoesController">
+   <children>
+      <Hyperlink layoutX="283.0" layoutY="260.0" text="https://github.com/he--/CineLab3d" underline="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="400.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagens/footer-pipoca.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="131.0" layoutY="264.0" text="Para mais informaçoes:" />
+      <Label layoutX="54.0" layoutY="137.0" text="Criadores:">
+         <font>
+            <Font name="Arial Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="180.0" text="Jose Edinaldo" />
+      <Label layoutX="95.0" layoutY="206.0" text="Helio Cardoso" />
+      <Label layoutX="208.0" layoutY="180.0" text="Git:" />
+      <Label layoutX="208.0" layoutY="206.0" text="Git:" />
+      <Hyperlink layoutX="247.0" layoutY="202.0" text="https://github.com/edinaldofox" />
+      <Hyperlink layoutX="247.0" layoutY="176.0" text="https://github.com/he--" />
+      <Label layoutX="151.0" layoutY="58.0" text="Projeto de Pos Graduaçao">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

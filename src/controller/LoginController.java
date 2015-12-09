@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -45,8 +46,12 @@ public class LoginController extends Application
 
     @FXML
     private TextField login;
+
     @FXML
     private PasswordField senha;
+
+    @FXML
+    private AnchorPane telaLogin;
 
     public static void main(String[] args) {
         launch(args);
@@ -59,7 +64,7 @@ public class LoginController extends Application
             Parent root = FXMLLoader.load(LoginController.class.getResource("/view/Login.fxml"));
             Scene scene = new Scene(root);
 
-            stage.getIcons().add(new Image("/imagens/icon.png"));
+            stage.getIcons().add(new Image("imagens/icon.png"));
             stage.setScene(scene);
             stage.setResizable(false);
             stage.setTitle("CineLab3d - Login / Cinema e Ingressos");
@@ -79,16 +84,17 @@ public class LoginController extends Application
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Menu.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
+
             Stage stage = new Stage();
+            stage.getIcons().add(new Image("imagens/icon.png"));
             stage.setTitle("CineLab3d");
             stage.setScene(new Scene(root1));
             stage.setMaximized(true);
             stage.show();
 
-//            closeLogin();
-
+            closeLogin();
         } catch (Exception e) {
-            System.err.println(e);
+
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Mensagem de Alerta");
             alert.setHeaderText("Ops, Erro ao tentar abrir a janela");
@@ -104,8 +110,8 @@ public class LoginController extends Application
     }
 
     public void closeLogin() {
-     stage1 = (Stage) btn_login.getScene().getWindow();
-     stage1.hide();
-}
+    	stage1 = (Stage) btn_login.getScene().getWindow();
+        stage1.hide();
+    }
 
 }
