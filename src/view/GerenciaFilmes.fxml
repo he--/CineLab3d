@@ -9,9 +9,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GerenciaFilmesController">
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GerenciaFilmesController">
    <children>
-      <ImageView layoutY="2.0" opacity="0.31" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView opacity="0.31" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../imagens/cinema.jpg" />
          </image>
@@ -19,39 +19,9 @@
             <Point3D />
          </rotationAxis>
       </ImageView>
-      <ImageView fitHeight="180.0" fitWidth="125.0" layoutX="34.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagens/filmes/5888_medio.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="180.0" fitWidth="125.0" layoutX="188.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagens/filmes/7499_medio.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="180.0" fitWidth="125.0" layoutX="34.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagens/filmes/7554_medio.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="180.0" fitWidth="125.0" layoutX="350.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagens/filmes/7590_medio.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="180.0" fitWidth="125.0" layoutX="508.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagens/filmes/7600_medio.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="180.0" fitWidth="125.0" layoutX="664.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagens/filmes/images-cine.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="22.0" layoutY="76.0" text="Em Cartaz" textFill="#4361ae">
+      <Label layoutX="22.0" layoutY="76.0" text="Em Cartaz">
          <font>
-            <Font name="Georgia" size="49.0" />
+            <Font name="Arial Bold" size="49.0" />
          </font>
       </Label>
       <ImageView fitHeight="132.0" fitWidth="314.0" layoutX="508.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -59,5 +29,20 @@
             <Image url="@../imagens/footer-pipoca.png" />
          </image>
       </ImageView>
+      <GridPane fx:id="gridFilmesCartaz" layoutX="26.0" layoutY="164.0" prefHeight="361.0" prefWidth="1222.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="200.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
    </children>
 </AnchorPane>
