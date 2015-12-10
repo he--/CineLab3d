@@ -12,10 +12,6 @@
 
 <AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="366.0" layoutY="38.0" text="Tela">
-         <font>
-            <Font name="System Bold Italic" size="56.0" />
-         </font>
-      </Label>
+      <Pane layoutX="160.0" layoutY="29.0" prefHeight="149.0" prefWidth="520.0" />
    </children>
 </AnchorPane>
