@@ -8,22 +8,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroSalaController">
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroSalaController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="410.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="410.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagens/footer-pipoca.png" />
          </image>
       </ImageView>
+      <Button fx:id="btn_sala_salvar" layoutX="177.0" layoutY="454.0" mnemonicParsing="false" text="Salvar" />
       <Label layoutX="66.0" layoutY="38.0" text="Formulario cadastro de Sala">
          <font>
             <Font name="Arial Bold" size="19.0" />
          </font>
       </Label>
+      <TextArea fx:id="textareaSalaNome" layoutX="177.0" layoutY="229.0" prefHeight="171.0" prefWidth="399.0" />
       <TextField fx:id="inputSalaNome" layoutX="178.0" layoutY="90.0" />
-      <TextArea fx:id="textareaSalaNome" layoutX="177.0" layoutY="135.0" prefHeight="171.0" prefWidth="399.0" />
-      <Button fx:id="btn_sala_salvar" onAction="#cadastrar" layoutX="179.0" layoutY="334.0" mnemonicParsing="false" text="Salvar" />
       <Label layoutX="109.0" layoutY="95.0" text="Nome:" />
-      <Label layoutX="85.0" layoutY="142.0" text="Descriçao:" />
+      <Label layoutX="85.0" layoutY="227.0" text="Descriçao:" />
+      <ChoiceBox fx:id="selectSalaSessao" layoutX="178.0" layoutY="135.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="selectSalaFilme" layoutX="175.0" layoutY="179.0" prefWidth="150.0" />
+      <Label layoutX="104.0" layoutY="139.0" text="Sessao:" />
+      <Label layoutX="113.0" layoutY="184.0" text="Filme:" />
    </children>
 </AnchorPane>

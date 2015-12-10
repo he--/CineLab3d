@@ -11,10 +11,10 @@ public class Sessao {
 	private String horario;
 
 	private String descricao;
-	
+
 	private String filme;
 
-	public Sessao(String horario, String filme) {
+	public Sessao() {
 		super();
 		this.horario = horario;
 		this.filme = filme;
