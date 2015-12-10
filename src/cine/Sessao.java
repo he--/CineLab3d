@@ -11,7 +11,14 @@ public class Sessao {
 	private String horario;
 
 	private String descricao;
+	
+	private String filme;
 
+	public Sessao(String horario, String filme) {
+		super();
+		this.horario = horario;
+		this.filme = filme;
+	}
 
 	public String getHorario() {
 		return horario;
