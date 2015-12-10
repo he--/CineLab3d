@@ -70,7 +70,7 @@ public class MenuController implements Initializable {
             mensagemErro();
         }
     }
-    
+
     public void gerenciarSala(ActionEvent event) {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/SalaCinema.fxml"));
@@ -81,6 +81,65 @@ public class MenuController implements Initializable {
             stage.setResizable(false);
             stage.show();
         } catch (IOException ex) {
+            mensagemErro();
+        }
+    }
+
+    public void inicio(ActionEvent event) {
+
+        painelMenu.setCenter(new Pane());
+        this.limparTela();
+
+    }
+
+    public void cadastrarSala(ActionEvent event) {
+        try{
+
+        	this.limparTela();
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/CadastroSala.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("CineLab3d");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException ex) {
+            mensagemErro();
+        }
+    }
+
+    public void cadastroFilme(ActionEvent event) {
+        try{
+
+        	this.limparTela();
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/CadastroFilme.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("CineLab3d");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException ex) {
+            mensagemErro();
+        }
+    }
+
+    public void cadastroSessao(ActionEvent event) {
+        try{
+
+        	this.limparTela();
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/CadastroSessao.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("CineLab3d");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException ex) {
+        	System.out.println(ex);
             mensagemErro();
         }
     }
@@ -97,5 +156,9 @@ public class MenuController implements Initializable {
                 + " possivel abrir esta janela!");
 
         alert.showAndWait();
+    }
+
+    private void limparTela() {
+    	painelMenu.setCenter(new Pane());
     }
 }

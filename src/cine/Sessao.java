@@ -9,9 +9,10 @@ import javafx.scene.chart.PieChart.Data;
 public class Sessao {
 
 	private String horario;
+
+	private String descricao;
 	
 	private String filme;
-	
 
 	public Sessao(String horario, String filme) {
 		super();
@@ -27,12 +28,16 @@ public class Sessao {
 		this.horario = horario;
 	}
 
-	public String getFilme() {
-		return filme;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setFilme(String filme) {
-		this.filme = filme;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Horario: "+this.horario + "\nDescrição: "+this.descricao;
+	}
 }

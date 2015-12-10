@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GerenciarSalaSessaoController">
+   <children>
+      <Button fx:id="btn_ss_salvar" layoutX="168.0" layoutY="222.0" mnemonicParsing="false" text="Salvar" />
+      <Label layoutX="108.0" layoutY="84.0" text="Sala:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="select_ss_sala" layoutX="167.0" layoutY="82.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="select_ss_filme" layoutX="167.0" layoutY="131.0" prefWidth="150.0" />
+      <Label layoutX="97.0" layoutY="132.0" text="Filme:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="38.0" text="Gerenciar Sala e Sessao">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="174.0" text="Sessao:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="select_ss_sessao" layoutX="166.0" layoutY="173.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
