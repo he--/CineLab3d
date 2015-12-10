@@ -8,30 +8,29 @@ import javafx.scene.chart.PieChart.Data;
 
 public class Sessao {
 
-	private Date horario;
-	
-	private String filme;
-	
-	public void Sessao()
-	{
-		this.horario  = new Date();
-		this.filme    = "";
-	}
+	private String horario;
 
-	public Date getHorario() {
+	private String descricao;
+
+
+	public String getHorario() {
 		return horario;
 	}
 
-	public void setHorario(Date horario) {
+	public void setHorario(String horario) {
 		this.horario = horario;
 	}
 
-	public String getFilme() {
-		return filme;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setFilme(String filme) {
-		this.filme = filme;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Horario: "+this.horario + "\nDescrição: "+this.descricao;
+	}
 }

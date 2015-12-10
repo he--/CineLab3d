@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroFilmeController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="410.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagens/footer-pipoca.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="95.0" layoutY="182.0" text="Descriçao:" />
+      <Label layoutX="119.0" layoutY="105.0" text="Nome:" />
+      <Label layoutX="76.0" layoutY="48.0" text="Formulario cadastro de Filme">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="inputFilmeNome" layoutX="188.0" layoutY="100.0" />
+      <TextField fx:id="inputFilmeImagem" layoutX="187.0" layoutY="137.0" />
+      <TextArea fx:id="extareaFilmeDescricao" layoutX="187.0" layoutY="175.0" prefHeight="171.0" prefWidth="399.0" />
+      <Button fx:id="btn_filme_salvar" onAction="#cadastrar" layoutX="186.0" layoutY="361.0" mnemonicParsing="false" text="Salvar" />
+      <Label layoutX="103.0" layoutY="142.0" text="Imagem:" />
+   </children>
+</AnchorPane>

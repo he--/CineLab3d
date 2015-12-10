@@ -14,6 +14,7 @@
               <menus>
                   <Menu mnemonicParsing="false" text="Aplicaçao">
                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#inicio" text="Inicio" />
                         <MenuItem mnemonicParsing="false" text="Gerenciar FIlmes" />
                         <MenuItem fx:id="btn_filmesEmCartaz" mnemonicParsing="false" onAction="#filmesEmCartaz" text="Filmes Em Cartaz" />
                         <MenuItem mnemonicParsing="false" onAction="#sair" text="Sair" />
@@ -21,12 +22,19 @@
                   </Menu>
                 <Menu mnemonicParsing="false" text="Sala">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#gerenciarSala" text="Gerenciar" />
+                    <MenuItem mnemonicParsing="false" text="Gerenciar" />
+                        <MenuItem mnemonicParsing="false" onAction="#cadastrarSala" text="Cadastrar Sala" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Usuarios">
+                  <Menu mnemonicParsing="false" text="Filme">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#cadastroFilme" text="Cadastrar Filme" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Sessao">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Gerenciar" />
+                        <MenuItem mnemonicParsing="false" onAction="#cadastroSessao" text="Cadastrar Sessao" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Configuraçoes">
