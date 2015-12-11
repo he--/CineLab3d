@@ -5,6 +5,7 @@
  */
 package controller;
 
+import cine.Cinema;
 import cine.Filme;
 import cine.Sala;
 import cine.Sessao;
@@ -74,6 +75,14 @@ public class MenuController extends Eventos{
         Filme filme = new Filme();
         filme.setDescricao(inputFilmeNome.getText());
         this.listaFilme.add(filme);
+    }
+    
+    public void verSala(ActionEvent event)
+    {
+    	SalaPane salaPane = new SalaPane();
+    	Pane pane = salaPane.carregar();
+    	this.painelMenu.setCenter(salaPane.carregar());
+    	
     }
     
     public void cadastrarSalaForm(ActionEvent event) {

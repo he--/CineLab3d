@@ -29,6 +29,11 @@
                     <MenuItem mnemonicParsing="false" onAction="#cadastroFilme" text="Cadastrar Filme" />
                   </items>
                 </Menu>
+                <Menu mnemonicParsing="false" text="Sala">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#verSala" text="Sala Sessão" />
+                  </items>
+                </Menu>
                 <Menu mnemonicParsing="false" text="Sessao">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#cadastroSessao" text="Cadastrar Sessao" />
