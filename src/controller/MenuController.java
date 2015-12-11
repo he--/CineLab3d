@@ -5,9 +5,13 @@
  */
 package controller;
 
+import cine.Filme;
+import cine.Sala;
+import cine.Sessao;
 import java.awt.Panel;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -28,137 +32,65 @@ import javafx.stage.Stage;
  *
  * @author edinaldo
  */
-public class MenuController implements Initializable {
-
-	@FXML
+public class MenuController extends Eventos{
+        
+    @FXML
     private MenuItem btn_filmesEmCartaz;
+    
+    @FXML
+    private TextField inputSessaoNome;
 
     @FXML
-    private BorderPane painelMenu;
+    private TextArea textareaSessaoNome;
+    
+    @FXML
+    private TextField inputFilmeNome;
 
-    private Pane paneCenter;
+    @FXML
+    private TextArea textareaFilmeNome;
+    
+    @FXML
+    private TextField inputSalaNome;
 
+    @FXML
+    private TextArea textareaSalaNome;
+    
+    @FXML
+    private ChoiceBox selectSalaSessao;
+    
     private Stage stage;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-
+    
+    
+   
+    public void cadastrarSessao(ActionEvent event) {
+        
+        Sessao sessao = new Sessao();
+        sessao.setDescricao(inputSessaoNome.getText());
+        this.listaSessao.add(sessao);
     }
-
-    public void filmesEmCartaz(ActionEvent event) {
-
+    
+    public void cadastrarFilme(ActionEvent event) {
+        
+        Filme filme = new Filme();
+        filme.setDescricao(inputFilmeNome.getText());
+        this.listaFilme.add(filme);
+    }
+    
+    public void cadastrarSalaForm(ActionEvent event) {
+//        Sala sala = new Sala();
+//        sala.setDescricao(inputSalaNome.getText());
+//        this.listaSala.add(sala);
+        
+        SalaPane salaPane = new SalaPane();
+//        Pane painel = salaPane.carregar();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/GerenciaFilmes.fxml"));
-
+        
         try {
-            Pane paneCenter = (Pane) loader.load();
-            painelMenu.setCenter(paneCenter);
-        } catch (IOException ex) {
-            this.mensagemErro();
+//            Pane paneCenter = (Pane) loader.load();
+            this.painelMenu.setCenter(salaPane.carregar());
+        } catch(Exception e) {
+            
         }
-    }
-
-    public void informacoes(ActionEvent event) {
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Informacoes.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("CineLab3d");
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException ex) {
-            mensagemErro();
-        }
-    }
-
-    public void gerenciarSala(ActionEvent event) {
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/SalaCinema.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("CineLab3d");
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException ex) {
-            mensagemErro();
-        }
-    }
-
-    public void inicio(ActionEvent event) {
-
-        painelMenu.setCenter(new Pane());
-        this.limparTela();
-
-    }
-
-    public void cadastrarSala(ActionEvent event) {
-        try{
-
-        	this.limparTela();
-
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/CadastroSala.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("CineLab3d");
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException ex) {
-            mensagemErro();
-        }
-    }
-
-    public void cadastroFilme(ActionEvent event) {
-        try{
-
-        	this.limparTela();
-
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/CadastroFilme.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("CineLab3d");
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException ex) {
-            mensagemErro();
-        }
-    }
-
-    public void cadastroSessao(ActionEvent event) {
-        try{
-
-        	this.limparTela();
-
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/CadastroSessao.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("CineLab3d");
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException ex) {
-        	System.out.println(ex);
-            mensagemErro();
-        }
-    }
-
-    public void sair(ActionEvent event) {
-        Platform.exit();
-    }
-
-    private void mensagemErro() {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Mensagem de Alerta");
-        alert.setHeaderText("Ops, Erro ao tentar abrir a janela");
-        alert.setContentText("Desculpe pelo transtorno mas não foi"
-                + " possivel abrir esta janela!");
-
-        alert.showAndWait();
-    }
-
-    private void limparTela() {
-    	painelMenu.setCenter(new Pane());
+        
     }
 }

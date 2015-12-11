@@ -36,12 +36,16 @@ import sun.awt.Graphics2Delegate;
  */
 public class SalaPane extends FlowPane
 {
+    private FlowPane pane;
+    
     public SalaPane () 
     {
     	super(10, 10);
+        this.pane = new FlowPane();
     }
+    
    
-    public void carregar() {
+    public Pane carregar() {
     	
         Cinema cinema = new Cinema(); 
         cinema.abreSala();
@@ -81,10 +85,10 @@ public class SalaPane extends FlowPane
 				}
 				Button cadeiraBt = new Button();
 				cadeiraBt.setBackground(background);
-				this.getChildren().add(cadeiraBt);
+				this.pane.getChildren().add(cadeiraBt);
 			}
 		}
-       
+     return this.pane;  
     }
     
     
