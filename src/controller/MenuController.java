@@ -33,64 +33,64 @@ import javafx.stage.Stage;
  * @author edinaldo
  */
 public class MenuController extends Eventos{
-        
+
     @FXML
     private MenuItem btn_filmesEmCartaz;
-    
+
     @FXML
     private TextField inputSessaoNome;
 
     @FXML
     private TextArea textareaSessaoNome;
-    
+
     @FXML
     private TextField inputFilmeNome;
 
     @FXML
     private TextArea textareaFilmeNome;
-    
+
     @FXML
     private TextField inputSalaNome;
 
     @FXML
     private TextArea textareaSalaNome;
-    
+
     @FXML
     private ChoiceBox selectSalaSessao;
-    
+
     private Stage stage;
-    
-    
-   
+
+
+
     public void cadastrarSessao(ActionEvent event) {
-        
+
         Sessao sessao = new Sessao();
         sessao.setDescricao(inputSessaoNome.getText());
         this.listaSessao.add(sessao);
     }
-    
+
     public void cadastrarFilme(ActionEvent event) {
-        
+
         Filme filme = new Filme();
         filme.setDescricao(inputFilmeNome.getText());
         this.listaFilme.add(filme);
     }
-    
+
     public void cadastrarSalaForm(ActionEvent event) {
 //        Sala sala = new Sala();
 //        sala.setDescricao(inputSalaNome.getText());
 //        this.listaSala.add(sala);
-        
+
         SalaPane salaPane = new SalaPane();
 //        Pane painel = salaPane.carregar();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/GerenciaFilmes.fxml"));
-        
+
         try {
 //            Pane paneCenter = (Pane) loader.load();
             this.painelMenu.setCenter(salaPane.carregar());
         } catch(Exception e) {
-            
+
         }
-        
+
     }
 }
