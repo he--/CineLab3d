@@ -94,7 +94,7 @@ public class LoginController extends Application
 
             closeLogin();
         } catch (Exception e) {
-
+System.out.println(e);
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Mensagem de Alerta");
             alert.setHeaderText("Ops, Erro ao tentar abrir a janela");

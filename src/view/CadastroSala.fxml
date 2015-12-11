@@ -8,14 +8,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroSalaController">
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="410.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagens/footer-pipoca.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_sala_salvar" layoutX="177.0" layoutY="454.0" mnemonicParsing="false" text="Salvar" />
+      <Button fx:id="btn_sala_salvar" layoutX="177.0" layoutY="454.0" mnemonicParsing="false" onAction="#cadastrarSalaForm" text="Salvar" />
       <Label layoutX="66.0" layoutY="38.0" text="Formulario cadastro de Sala">
          <font>
             <Font name="Arial Bold" size="19.0" />
