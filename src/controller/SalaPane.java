@@ -5,20 +5,31 @@
  */
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.StringTokenizer;
 
+import com.sun.javafx.collections.MappingChange.Map;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import cine.Cadeira;
 import cine.Cinema;
+import cine.Cliente;
 import cine.Legenda;
+import cine.Sala;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -34,29 +45,33 @@ import sun.awt.Graphics2Delegate;
  *
  * @author edinaldo
  */
-public class SalaPane extends FlowPane
-{
-    private FlowPane pane;
+public class SalaPane {
+	
+    private Pane pane;
     
     private Cinema cinema;
     
+    private Image imagenBotao;
+    
+    @FXML
+    private Pane painelCadeiras;
+    
     public SalaPane (Cinema cinema) 
     {
-    	super(10, 10);
     	this.cinema = cinema;
-        this.pane = new FlowPane();
     }
     
    
-    public Pane carregar() {
+    public Pane carregar() throws IOException {
     	
-        this.cinema.abreSala();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/SalaCinema.fxml"));
+        this.pane = (Pane) fxmlLoader.load();
+        
         int fileira[] = this.cinema.getFileira();
         String letra[] = this.cinema.getLetra();
+        FlowPane cadeiras = new FlowPane(20,20);
         
-//        GridPane gridpane = new GridPane();
-        BackgroundSize backgroundSize = new BackgroundSize(20, 20, true, true, true, false);
-     // new BackgroundImage(image, repeatX, repeatY, position, size)
+        BackgroundSize backgroundSize = new BackgroundSize(70, 70, true, true, true, false);
         Background background = null;
 		BackgroundImage cadeiraLivre = new BackgroundImage( 
 				new Image( getClass().getResource("/imagens/poltronaLivre.png").toExternalForm()),
@@ -70,10 +85,10 @@ public class SalaPane extends FlowPane
 				BackgroundRepeat.NO_REPEAT,
 				BackgroundPosition.DEFAULT, backgroundSize
 				);
-        for (int j = 0; j < fileira.length; j++) {
-			for (int i = 0; i < letra.length; i++) {
-				
-				//@todo fazer construtor com dois parametros
+		
+			for (int j = 0; j < fileira.length; j++) {
+				for (int i = 0; i < letra.length; i++) {
+					
 				Legenda legenda = new Legenda();
 				legenda.setLetra(letra[i]);
 				legenda.setNumero(j);
@@ -86,11 +101,27 @@ public class SalaPane extends FlowPane
 				}
 				Button cadeiraBt = new Button();
 				cadeiraBt.setBackground(background);
-				this.pane.getChildren().add(cadeiraBt);
+				cadeiraBt.setId(legenda.getLetra()+"-"+legenda.getNumero());
+				cadeiraBt.setOnAction(this::handleButtonAction);
+				cadeiras.getChildren().add(cadeiraBt);
 			}
 		}
+        cadeiras.setLayoutX(170.00);
+        cadeiras.setLayoutY(225.00);
+        this.pane.getChildren().add(cadeiras);
      return this.pane;  
     }
     
-    
+    @FXML
+    private void handleButtonAction(ActionEvent event) {
+     
+        Button botao = (Button) event.getSource();
+        Sala sala = this.cinema.getSala();
+        StringTokenizer tokenizer = new StringTokenizer(botao.getId(), "-");
+        Legenda legenda = new Legenda();
+        legenda.setLetra(tokenizer.nextToken());
+        legenda.setNumero(Integer.parseInt(tokenizer.nextToken()));
+        Cadeira cadeira = sala.getCadeira(legenda);
+        cadeira.setOcupada(true);
+    }
 }

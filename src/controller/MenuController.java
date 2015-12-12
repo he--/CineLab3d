@@ -23,8 +23,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -76,17 +78,18 @@ public class MenuController extends Eventos{
         this.listaFilme.add(filme);
     }
     
-    public void verSala(ActionEvent event)
+    public void verSala(ActionEvent event) throws IOException
     {
+
     	SalaPane salaPane = new SalaPane(this.cinema);
-    	Pane pane = salaPane.carregar();
-    	 Scene scene = new Scene(pane);
-    	 Stage stage = new Stage();
-    	 stage.setScene(scene);
-    	 stage.show();
+    	Pane pane = (Pane) salaPane.carregar();
+        Stage stage = new Stage();
+        stage.getIcons().add(new Image("imagens/icon.png"));
+        stage.setTitle("CineLab3d");
+        stage.setScene(new Scene(pane));
+        stage.show();
+     }
     	
-    }
-    
     public void cadastrarSalaForm(ActionEvent event) {
 //        Sala sala = new Sala();
 //        sala.setDescricao(inputSalaNome.getText());

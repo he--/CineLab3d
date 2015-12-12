@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import com.sun.prism.Image;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +24,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -38,13 +43,18 @@ public class Eventos implements Initializable {
     
     public Cinema cinema;
     
+    private javafx.scene.image.Image imagenBotao;
+    
     protected ArrayList<Sessao> listaSessao = new ArrayList<Sessao>();
     protected ArrayList<Filme> listaFilme = new ArrayList<Filme>();
     protected ArrayList<Sala> listaSala = new ArrayList<Sala>();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    	this.cinema = new Cinema();
+    	if (this.cinema == null) {
+    		this.cinema = new Cinema();
+    		this.cinema.abreSala();
+    	}
     }
     
     public void filmesEmCartaz(ActionEvent event) {
@@ -104,6 +114,12 @@ public class Eventos implements Initializable {
     public void cadastroSessao(ActionEvent event) {
         try{
         	Cinema cinema = new Cinema(); 
+        	imagenBotao = new javafx.scene.image.Image("/imagens/poltronaLivre.png");
+            ImageView im = new ImageView(imagenBotao);
+            im.setFitHeight(60);
+            im.setFitWidth(60);
+            Button button = new Button();
+            button.setGraphic(im);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/CadastroSessao.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();

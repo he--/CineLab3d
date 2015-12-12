@@ -23,7 +23,7 @@ public class Cinema
 	public Cinema()
 	{
 		this.letra = new String[6];
-		this.fileira = new int[10];
+		this.fileira = new int[8];
 		this.sala = new Sala();
 		this.inInt    = new Scanner(System.in);
 		this.inString = new Scanner(System.in);

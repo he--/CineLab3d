@@ -9,9 +9,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.FlowPane?>
 
-<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="160.0" layoutY="29.0" prefHeight="149.0" prefWidth="520.0" />
+      <FlowPane fx:id="salaCinema" layoutX="143.0" layoutY="22.0" prefHeight="485.0" prefWidth="463.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="487.0" layoutX="6.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagens/maquina.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="487.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagens/maquina.jpg" />
+               </image>
+            </ImageView>
+         </children>
+         </FlowPane>
    </children>
 </AnchorPane>

@@ -5,6 +5,14 @@ public class Cliente {
 	private String nome;
 	
 	private String telefone;
+	
+	public Cliente() {
+		
+	}
+	
+	public Cliente(String nome) {
+		this.nome = nome;
+	}
 
 	public String getNome() {
 		return nome;
