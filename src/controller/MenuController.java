@@ -60,9 +60,8 @@ public class MenuController extends Eventos{
     private ChoiceBox selectSalaSessao;
 
     private Stage stage;
-
-
-
+    
+    
     public void cadastrarSessao(ActionEvent event) {
 
         Sessao sessao = new Sessao();
@@ -79,9 +78,12 @@ public class MenuController extends Eventos{
     
     public void verSala(ActionEvent event)
     {
-    	SalaPane salaPane = new SalaPane();
+    	SalaPane salaPane = new SalaPane(this.cinema);
     	Pane pane = salaPane.carregar();
-    	this.painelMenu.setCenter(salaPane.carregar());
+    	 Scene scene = new Scene(pane);
+    	 Stage stage = new Stage();
+    	 stage.setScene(scene);
+    	 stage.show();
     	
     }
     
@@ -90,7 +92,7 @@ public class MenuController extends Eventos{
 //        sala.setDescricao(inputSalaNome.getText());
 //        this.listaSala.add(sala);
 
-        SalaPane salaPane = new SalaPane();
+        SalaPane salaPane = new SalaPane(this.cinema);
 //        Pane painel = salaPane.carregar();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/GerenciaFilmes.fxml"));
 

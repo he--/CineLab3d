@@ -38,20 +38,21 @@ public class SalaPane extends FlowPane
 {
     private FlowPane pane;
     
-    public SalaPane () 
+    private Cinema cinema;
+    
+    public SalaPane (Cinema cinema) 
     {
     	super(10, 10);
+    	this.cinema = cinema;
         this.pane = new FlowPane();
     }
     
    
     public Pane carregar() {
     	
-        Cinema cinema = new Cinema(); 
-        cinema.abreSala();
-        
-        int fileira[] = cinema.getFileira();
-        String letra[] = cinema.getLetra();
+        this.cinema.abreSala();
+        int fileira[] = this.cinema.getFileira();
+        String letra[] = this.cinema.getLetra();
         
 //        GridPane gridpane = new GridPane();
         BackgroundSize backgroundSize = new BackgroundSize(20, 20, true, true, true, false);
@@ -76,7 +77,7 @@ public class SalaPane extends FlowPane
 				Legenda legenda = new Legenda();
 				legenda.setLetra(letra[i]);
 				legenda.setNumero(j);
-				Cadeira cadeira = cinema.getSala().getCadeira(legenda);
+				Cadeira cadeira = this.cinema.getSala().getCadeira(legenda);
 				
 				if (cadeira.isOcupada()) {
 					background = new Background(cadeiraOcupada);

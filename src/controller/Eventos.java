@@ -36,13 +36,15 @@ public class Eventos implements Initializable {
     
     private Pane paneCenter;
     
+    public Cinema cinema;
+    
     protected ArrayList<Sessao> listaSessao = new ArrayList<Sessao>();
     protected ArrayList<Filme> listaFilme = new ArrayList<Filme>();
     protected ArrayList<Sala> listaSala = new ArrayList<Sala>();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Cinema cinema = new Cinema();
+    	this.cinema = new Cinema();
     }
     
     public void filmesEmCartaz(ActionEvent event) {
@@ -101,7 +103,7 @@ public class Eventos implements Initializable {
     
     public void cadastroSessao(ActionEvent event) {
         try{
-
+        	Cinema cinema = new Cinema(); 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/CadastroSessao.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
